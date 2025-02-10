@@ -1,1 +1,29 @@
-<p>contact works!</p>
+<button (click)="load()" xmlns="http://www.w3.org/1999/html">Load All Data</button>
+<hr>
+<h1>Photos</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Album Id</th>
+      <th>Id</th>
+      <th>title</th>
+      <th>Url</th>
+      <th>Thumbnail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tempPhoto of photos">
+      <td>{{tempPhoto?.albumId}}</td>
+      <td>{{tempPhoto?.id}}</td>
+      <td>{{tempPhoto?.title}}</td>
+      <td><img [src]="tempPhoto?.url" [alt]="tempPhoto?.title" width="100"></td>
+      <td><img [src]="tempPhoto?.thumbnailUrl" [alt]="tempPhoto?.title" width="100"></td>
+    </tr>
+  </tbody>
+
+</table>
+<hr>
+<h1>Comments</h1>
+<table>
+
+</table>
