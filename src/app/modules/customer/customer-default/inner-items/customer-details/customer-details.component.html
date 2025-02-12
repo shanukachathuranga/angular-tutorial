@@ -1,0 +1,23 @@
+<h1>Customer Detail</h1>
+<hr>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>User Id</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngIf="selectedCustomer" >
+    <td>{{selectedCustomer?.userId}}</td>
+    <td>{{selectedCustomer?.id}}</td>
+    <td>{{selectedCustomer?.title}}</td>
+    <td>{{selectedCustomer?.completed?'Completed':'Pending'}}</td>
+  </tr>
+  </tbody>
+</table>
+<hr>
+<app-customer-list></app-customer-list>
+<hr>
