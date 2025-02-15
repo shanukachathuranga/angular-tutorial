@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BehaviorSubject, debounce, debounceTime, Observable, Subject, Subscriber} from 'rxjs';
-import {log} from 'node:util';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {DatePipe, UpperCasePipe} from '@angular/common';
-import {SubstringPipe} from './SubstringPipe';
+import {SubstringPipe} from '../../pipes/SubstringPipe';
 
 @Component({
   selector: 'app-about',

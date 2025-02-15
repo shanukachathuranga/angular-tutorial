@@ -10,7 +10,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let tempData of todos" routerLink="/customer/default-customer/details/{{tempData?.id}}">
+<!--  routerLink="/customer/default-customer/details/{{tempData?.id}}"-->
+  <tr *ngFor="let tempData of todos" (click)="loadPage(tempData?.id)">
     <td>{{tempData?.userId}}</td>
     <td>{{tempData?.id}}</td>
     <td>{{tempData?.title}}</td>

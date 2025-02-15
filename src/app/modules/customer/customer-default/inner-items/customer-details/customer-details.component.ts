@@ -15,20 +15,24 @@ import {CustomerListComponent} from '../customer-list/customer-list.component';
 })
 export class CustomerDetailsComponent implements OnInit {
 
-  customerId = undefined;
+  customerId = '';
   selectedCustomer:any ;
 
   constructor(private _activatedRoute: ActivatedRoute, private _todoService: TodosService) { }
 
   ngOnInit(): void {
-    this.customerId = this._activatedRoute.snapshot.params['id'];
+    // this.customerId = this._activatedRoute.snapshot.params['id'];
+    this._activatedRoute.paramMap.subscribe(resp=>{
+      this.customerId = resp.get('id')!;
+      this.loadCustomerDetails();
+    })
 
-    this.loadCustomerDetails();
   }
 
   loadCustomerDetails() {
     this._todoService.getCustomerData(this.customerId).subscribe(response => {
       this.selectedCustomer = response;
+      window.scrollTo(0,0);
       }
     )
   }
